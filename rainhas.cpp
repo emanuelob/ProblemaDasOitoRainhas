@@ -1,6 +1,10 @@
 #include "rainhas.hpp"
 #include <fstream>
 
+Rainhas::Rainhas(const char* filename) { 
+    this->filename = filename;
+}
+
 int Rainhas::verifica() {
     std::ifstream file(filename);
     if (!file.is_open()) {
@@ -30,5 +34,7 @@ int Rainhas::verifica() {
     if (count!= 8) {
         return -1; // não tem 8 rainhas
     }
+
+    // return 1; // tabuleiro válido
 
 }
