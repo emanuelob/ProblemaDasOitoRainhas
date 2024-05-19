@@ -2,9 +2,11 @@
 #include "catch.hpp"
 #include "rainhas.hpp"
 
-TEST_CASE("Verifica tabuleiros que não são válido", "[tabuleiros]") {
+TEST_CASE("Verifica tabuleiros que não são válidos", "[tabuleiros]") {
     Rainhas tabuleiro("tabuleiros/teste1.txt"); 
     REQUIRE(tabuleiro.verifica() == -1);
+    Rainhas tabuleiro2("tabuleiros/teste2.txt");
+    REQUIRE(tabuleiro2.verifica() == -1);
 }
 
 // TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabuleiros]") {
