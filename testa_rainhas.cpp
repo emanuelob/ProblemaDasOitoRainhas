@@ -7,6 +7,8 @@ TEST_CASE("Verifica tabuleiros que não são válidos", "[tabuleiros]") {
     REQUIRE(tabuleiro.verifica() == -1);
     Rainhas tabuleiro2("tabuleiros/teste2.txt");
     REQUIRE(tabuleiro2.verifica() == -1);
+    Rainhas tabuleiro3("tabuleiros/teste3.txt");
+    REQUIRE(tabuleiro3.verifica() == -1);
 }
 
 // TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabuleiros]") {
