@@ -24,7 +24,7 @@ int Rainhas::verifica() {
             if (c == '1') {
                 count++; //quantidade de rainhas
             } else if (c!= '0') {
-                return -1; //xaracter inválido 
+                return -1; //caracter inválido 
             }
         }
 
