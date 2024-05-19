@@ -49,4 +49,8 @@ TEST_CASE("Verifica tabuleiros que não são uma solução para o problema", "[t
     REQUIRE(tabuleiro18.verifica() == 0);
     Rainhas tabuleiro19("tabuleiros/teste19.txt");
     REQUIRE(tabuleiro19.verifica() == 0);
+    Rainhas tabuleiro20("tabuleiros/teste20.txt");
+    REQUIRE(tabuleiro20.verifica() == 0);
+    Rainhas tabuleiro21("tabuleiros/teste21.txt");
+    REQUIRE(tabuleiro21.verifica() == 0);
 }
