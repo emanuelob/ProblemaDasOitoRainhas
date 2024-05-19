@@ -13,10 +13,12 @@ TEST_CASE("Verifica tabuleiros que não são válidos", "[tabuleiros]") {
     REQUIRE(tabuleiro4.verifica() == -1);
 }
 
-// TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabuleiros]") {
-//     Rainhas tabuleiro(""); 
-//     REQUIRE(tabuleiro.verifica() == 1);
-// }
+TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabuleiros]") {
+    Rainhas tabuleiro5("tabuleiros/teste5.txt"); 
+    REQUIRE(tabuleiro5.verifica() == 1);
+    Rainhas tabuleiro6("tabuleiros/teste6.txt");
+    REQUIRE(tabuleiro6.verifica() == 1);
+}
 
 // TEST_CASE("Verifica tabuleiro que não são uma solução para o problema", "[tabuleiros]") {
 //     Rainhas tabuleiro("teste_8_rainhas.txt"); 
