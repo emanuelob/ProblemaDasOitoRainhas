@@ -1,0 +1,29 @@
+﻿Sobre o Makefile:
+
+Esse trabalho utiliza Makefile para automatizar o processo de compilação do projeto. 
+Ele contém algumas regras que especificam como os arquivos do programa devem ser compilados, bem como outras tarefas relacionadas à compilação, como limpeza de arquivos gerados e execução de testes.
+
+Temos os seguintes comandos:
+
+Compilação: Use o comando "make compile" para compilar os arquivos. Isso irá gerar o executável testa_romanos.
+Execução dos Testes: Use o comando "make test" para executar os testes. Isso irá rodar o executável testa_romanos e mostrar os resultados dos testes.
+Verificação de Estilo: Use o comando "make cpplint" para verificar o estilo do código. Isso irá executar o cpplint nos arquivos especificados e reportar quaisquer problemas de estilo.
+Cobertura de Código: Use o comando "make gcov" ou "gcovr" para gerar a cobertura de código. Isso irá compilar os arquivos com as flags necessárias para cobertura e executar o teste, gerando arquivos .gcov que mostram a cobertura de cada linha de código.
+Verificação Estática: Use o comando "make cppcheck" para executar o cppcheck nos arquivos especificados. Isso irá reportar quaisquer problemas estáticos encontrados no código.
+Verificação Dinâmica: Use o comando "make valgrind" para executar o Valgrind no executável testa_romanos. Isso irá verificar se há problemas dinâmicos.
+Limpeza: Use o comando "make clean" para remover os arquivos gerados durante a compilação e execução dos testes.
+
+Sobre o projeto:
+
+Este projeto verifica soluções do problema das 8 rainhas, onde o objetivo é posicionar 8 rainhas em um tabuleiro de xadrez 8x8 de forma que nenhuma delas possa atacar outra. 
+O projeto inclui testes unitários para validar diferentes cenários de entrada.
+
+Testes cobertos:
+
+A verificação deverá retornar:
+. 1 caso seja uma solução para o problema
+. 0 caso não seja uma solução para o problema
+. -1 caso a entrada não seja válida. Ex. não é um tabuleiro 8x8, não tem 8 rainhas, etc.
+No caso de não ser solução para o problema, o programa salva um arquivo “ataques.txt” com as posições das rainhas que se atacam. 
+Um ataque por linha, por exemplo:
+--> 1,3 4,3 (significa rainha na posição 1,3 (linha, coluna) ataca rainha na posição 4,3 (e vice-versa)). 
