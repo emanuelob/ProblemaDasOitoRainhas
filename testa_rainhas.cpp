@@ -18,6 +18,8 @@ TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabule
     REQUIRE(tabuleiro5.verifica() == 1);
     Rainhas tabuleiro6("tabuleiros/teste6.txt");
     REQUIRE(tabuleiro6.verifica() == 1);
+    Rainhas tabuleiro7("tabuleiros/teste7.txt");	
+    REQUIRE(tabuleiro7.verifica() == 1);
 }
 
 // TEST_CASE("Verifica tabuleiro que não são uma solução para o problema", "[tabuleiros]") {
