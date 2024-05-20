@@ -1,0 +1,63 @@
+\hypertarget{classRainhas}{}\doxysection{Rainhas Class Reference}
+\label{classRainhas}\index{Rainhas@{Rainhas}}
+
+
+{\ttfamily \#include $<$rainhas.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRainhas_a5163932a4e467478fdfaf239617b59fa}{Rainhas}} (const char $\ast$filename)
+\item 
+int \mbox{\hyperlink{classRainhas_a5d665a7baf6463465f3565fa811aa6c8}{verifica}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{classRainhas}{Rainhas}}.
+
+Esta classe encapsula a lógica para resolver o problema das 8 rainhas em um tabuleiro 8x8. Ela lê a disposição inicial das rainhas de um arquivo e verifica se a disposição é válida, ou seja, se nenhuma rainha pode atacar outra. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRainhas_a5163932a4e467478fdfaf239617b59fa}\label{classRainhas_a5163932a4e467478fdfaf239617b59fa}} 
+\index{Rainhas@{Rainhas}!Rainhas@{Rainhas}}
+\index{Rainhas@{Rainhas}!Rainhas@{Rainhas}}
+\doxysubsubsection{\texorpdfstring{Rainhas()}{Rainhas()}}
+{\footnotesize\ttfamily Rainhas\+::\+Rainhas (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Construtor da classe \mbox{\hyperlink{classRainhas}{Rainhas}}\+:
+\begin{DoxyParams}{Parameters}
+{\em filename} & Caminho para o arquivo contendo a disposição inicial das rainhas.\\
+\hline
+\end{DoxyParams}
+Construtor da classe \mbox{\hyperlink{classRainhas}{Rainhas}}. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Caminho para o arquivo contendo a disposição inicial das rainhas. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRainhas_a5d665a7baf6463465f3565fa811aa6c8}\label{classRainhas_a5d665a7baf6463465f3565fa811aa6c8}} 
+\index{Rainhas@{Rainhas}!verifica@{verifica}}
+\index{verifica@{verifica}!Rainhas@{Rainhas}}
+\doxysubsubsection{\texorpdfstring{verifica()}{verifica()}}
+{\footnotesize\ttfamily int Rainhas\+::verifica (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+sempre será um inteiro.
+\end{DoxyReturn}
+Verifica se a disposição das rainhas no tabuleiro é válida. Uma disposição/solução é considerada válida se nenhuma rainha puder atacar outra. \begin{DoxyReturn}{Returns}
+1 se a disposição for válida, 0 caso contrário. 
+
+-\/1 se a disposição for inválida, como tabuleiro que não seja 8x8, tabuleiro com caracteres não binários, tabuleiro com mais de 8 rainhas e tabuleiro com rainhas localizadas na mesma linha. 
+\end{DoxyReturn}
+Lê o arquivo linha por linha e verifica se há mais de uma rainha na mesma linha, se o tabuleiro é 8x8 e se todos os caracteres são válidos (\textquotesingle{}0\textquotesingle{} ou \textquotesingle{}1\textquotesingle{}). Essas condições apontam tabuleiros inválidos, retornando -\/1. ~\newline
+
+
+Por meio de dois for loops, verifica se as rainhas estão na mesma coluna ou se elas se atacam na diagonal. Para tanto, compara a posição das rainhas em cada linha, verificando se elas estão na mesma coluna ou se a diferença entre as colunas é igual à diferença entre as linhas. Caso encontre alguma condição de ataque, marca a solução como falsa e registra os ataques no arquivo ataques.\+txt.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rainhas_8hpp}{rainhas.\+hpp}}\item 
+\mbox{\hyperlink{rainhas_8cpp}{rainhas.\+cpp}}\end{DoxyCompactItemize}

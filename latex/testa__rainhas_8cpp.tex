@@ -1,0 +1,46 @@
+\hypertarget{testa__rainhas_8cpp}{}\doxysection{testa\+\_\+rainhas.\+cpp File Reference}
+\label{testa__rainhas_8cpp}\index{testa\_rainhas.cpp@{testa\_rainhas.cpp}}
+{\ttfamily \#include \char`\"{}catch.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rainhas.\+hpp\char`\"{}}\newline
+Include dependency graph for testa\+\_\+rainhas.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{testa__rainhas_8cpp_aa20f461d11cbf7516d56e7ea72810be8}{TEST\+\_\+\+CASE}} (\char`\"{}Verifica tabuleiros que não são válidos\char`\"{}, \char`\"{}\mbox{[}tabuleiros\mbox{]}\char`\"{})
+\item 
+\mbox{\hyperlink{testa__rainhas_8cpp_a34aa4bc68de813d9e0a3e61adb3ac311}{TEST\+\_\+\+CASE}} (\char`\"{}Verifica tabuleiros que são uma solução para o problema\char`\"{}, \char`\"{}\mbox{[}tabuleiros\mbox{]}\char`\"{})
+\item 
+\mbox{\hyperlink{testa__rainhas_8cpp_a779a21a167c0cda8b83d005b3c49cd91}{TEST\+\_\+\+CASE}} (\char`\"{}Verifica tabuleiros que não são uma solução para o problema\char`\"{}, \char`\"{}\mbox{[}tabuleiros\mbox{]}\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Testes unitários para a classe \mbox{\hyperlink{classRainhas}{Rainhas}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{testa__rainhas_8cpp_a779a21a167c0cda8b83d005b3c49cd91}\label{testa__rainhas_8cpp_a779a21a167c0cda8b83d005b3c49cd91}} 
+\index{testa\_rainhas.cpp@{testa\_rainhas.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_rainhas.cpp@{testa\_rainhas.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Verifica tabuleiros que não são uma solução para o problema\char`\"{}}]{,  }\item[{\char`\"{}\char`\"{}}]{\mbox{[}tabuleiros\mbox{]} }\end{DoxyParamCaption})}
+
+Test case para verificar tabuleiros que não são uma solução para o problema das 8 rainhas.
+
+Este teste confere se a função verifica() retorna 0 para tabuleiros que não possuem soluções válidos, ou seja, tabuleiros que possuem formatação correta mas não satisfazem as regras do problema das 8 rainhas (em algum momento as rainhas se atacam). Além disso, gera o arquivo ataques.\+txt correspondente aos ataques. \mbox{\Hypertarget{testa__rainhas_8cpp_aa20f461d11cbf7516d56e7ea72810be8}\label{testa__rainhas_8cpp_aa20f461d11cbf7516d56e7ea72810be8}} 
+\index{testa\_rainhas.cpp@{testa\_rainhas.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_rainhas.cpp@{testa\_rainhas.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Verifica tabuleiros que não são válidos\char`\"{}}]{,  }\item[{\char`\"{}\char`\"{}}]{\mbox{[}tabuleiros\mbox{]} }\end{DoxyParamCaption})}
+
+Test case para verificar tabuleiros que não são válidos.
+
+Este teste verifica se a função verifica() retorna -\/1 para tabuleiros que não são válidos, ou seja, tabuleiros que violam o formato e as regras do problema das 8 rainhas (disposição das entradas). \mbox{\Hypertarget{testa__rainhas_8cpp_a34aa4bc68de813d9e0a3e61adb3ac311}\label{testa__rainhas_8cpp_a34aa4bc68de813d9e0a3e61adb3ac311}} 
+\index{testa\_rainhas.cpp@{testa\_rainhas.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_rainhas.cpp@{testa\_rainhas.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Verifica tabuleiros que são uma solução para o problema\char`\"{}}]{,  }\item[{\char`\"{}\char`\"{}}]{\mbox{[}tabuleiros\mbox{]} }\end{DoxyParamCaption})}
+
+Test case para verificar tabuleiros que são uma solução para o problema.
+
+Este teste confere se a função verifica() retorna 1 para tabuleiros que são válidos, ou seja, tabuleiros cujas soluções satisfazem o problema das 8 rainhas. Nessa, a disposição do tabuleiro é válida e nenhuma rainha pode atacar outra. 

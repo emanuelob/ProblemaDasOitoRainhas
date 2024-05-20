@@ -1,0 +1,13 @@
+\hypertarget{rainhas_8cpp}{}\doxysection{rainhas.\+cpp File Reference}
+\label{rainhas_8cpp}\index{rainhas.cpp@{rainhas.cpp}}
+{\ttfamily \#include \char`\"{}rainhas.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for rainhas.\+cpp\+:
+% FIG 0
+
+
+\doxysubsection{Detailed Description}
+Implementação da classe \mbox{\hyperlink{classRainhas}{Rainhas}} para resolver o problema das 8 rainhas. 
