@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-Este projeto implementa uma solução para o clássico problema das 8 rainhas, utilizando C++. O objetivo é posicionar 8 rainhas em um tabuleiro de xadrez 8x8 de forma que nenhuma delas possa atacar outra. A solução é baseada na leitura de um arquivo de entrada que define a disposição inicial (tabuleiro) das rainhas.
+Este projeto implementa um verificador de solução para o clássico problema das 8 rainhas, utilizando C++. O objetivo é posicionar 8 rainhas em um tabuleiro de xadrez 8x8 de forma que nenhuma delas possa atacar outra. A solução é baseada na leitura de um arquivo de entrada que define a disposição inicial (tabuleiro) das rainhas.
 
 ## Pré-requisitos
 
