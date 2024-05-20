@@ -44,22 +44,12 @@ int Rainhas::verifica() {
     std::ofstream attacksFile("ataques.txt"); // arquivo para salvar os ataques
     bool validSolution = true;
 
-    // as rainhas estão na mesma linha ou coluna?
+    // Verifica se as rainhas estão na mesma coluna/linha ou se elas se atacam na diagonal
     for (int i = 0; i < 8; ++i) {
         for (int j = i + 1; j < 8; ++j) {
-            if (queens[i] == queens[j]) { // rainhas na mesma coluna
+            if (queens[i] == queens[j] || abs(queens[i] - queens[j]) == abs(i - j)) { 
                 validSolution = false;
-                attacksFile << i + 1 << "," << queens[i] + 1 << " ";
-            }
-        }
-    }
-
-    // agpra, verificação de ataques em diagonais
-    for (int i = 0; i < 8; ++i) {
-        for (int j = i + 1; j < 8; ++j) {
-            if (abs(queens[i] - queens[j]) == abs(i - j)) { // mesma diagonal
-                validSolution = false;
-                attacksFile << i + 1 << "," << queens[i] + 1 << " ";
+                attacksFile << i + 1 << "," << queens[i] + 1 << " " << j + 1 << "," << queens[j] + 1 << "\n";
             }
         }
     }

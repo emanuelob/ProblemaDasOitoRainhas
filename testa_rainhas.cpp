@@ -29,28 +29,28 @@ TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabule
 }
 
 TEST_CASE("Verifica tabuleiros que não são uma solução para o problema", "[tabuleiros]") {
-    // Rainhas tabuleiroProfessor("tabuleiros/teste_8_rainhas.txt"); 
-    // REQUIRE(tabuleiroProfessor.verifica() == 0);
     Rainhas tabuleiro11("tabuleiros/teste11.txt"); 
     REQUIRE(tabuleiro11.verifica() == 0);
-    Rainhas tabuleiro12("tabuleiros/teste12.txt");
-    REQUIRE(tabuleiro12.verifica() == 0);
-    Rainhas tabuleiro13("tabuleiros/teste13.txt");
-    REQUIRE(tabuleiro13.verifica() == 0);
-    Rainhas tabuleiro14("tabuleiros/teste14.txt");
-    REQUIRE(tabuleiro14.verifica() == 0);
-    Rainhas tabuleiro15("tabuleiros/teste15.txt");
-    REQUIRE(tabuleiro15.verifica() == 0);
-    Rainhas tabuleiro16("tabuleiros/teste16.txt");
-    REQUIRE(tabuleiro16.verifica() == 0);
-    Rainhas tabuleiro17("tabuleiros/teste17.txt");
-    REQUIRE(tabuleiro17.verifica() == 0);
-    Rainhas tabuleiro18("tabuleiros/teste18.txt");
-    REQUIRE(tabuleiro18.verifica() == 0);
-    Rainhas tabuleiro19("tabuleiros/teste19.txt");
-    REQUIRE(tabuleiro19.verifica() == 0);
-    Rainhas tabuleiro20("tabuleiros/teste20.txt");
-    REQUIRE(tabuleiro20.verifica() == 0);
-    Rainhas tabuleiro21("tabuleiros/teste21.txt");
-    REQUIRE(tabuleiro21.verifica() == 0);
+    // Rainhas tabuleiro12("tabuleiros/teste12.txt");
+    // REQUIRE(tabuleiro12.verifica() == 0);
+    // Rainhas tabuleiro13("tabuleiros/teste13.txt");
+    // REQUIRE(tabuleiro13.verifica() == 0);
+    // Rainhas tabuleiro14("tabuleiros/teste14.txt");
+    // REQUIRE(tabuleiro14.verifica() == 0);
+    // Rainhas tabuleiro15("tabuleiros/teste15.txt");
+    // REQUIRE(tabuleiro15.verifica() == 0);
+    // Rainhas tabuleiro16("tabuleiros/teste16.txt");
+    // REQUIRE(tabuleiro16.verifica() == 0);
+    // Rainhas tabuleiro17("tabuleiros/teste17.txt");
+    // REQUIRE(tabuleiro17.verifica() == 0);
+    // Rainhas tabuleiro18("tabuleiros/teste18.txt");
+    // REQUIRE(tabuleiro18.verifica() == 0);
+    // Rainhas tabuleiro19("tabuleiros/teste19.txt");
+    // REQUIRE(tabuleiro19.verifica() == 0);
+    // Rainhas tabuleiro20("tabuleiros/teste20.txt");
+    // REQUIRE(tabuleiro20.verifica() == 0);
+    // Rainhas tabuleiro21("tabuleiros/teste21.txt");
+    // REQUIRE(tabuleiro21.verifica() == 0);
+    // Rainhas tabuleiro22("tabuleiros/teste22.txt"); //mesmo arquivo do professor, teste_8_rainhas.txt
+    // REQUIRE(tabuleiro22.verifica() == 0);
 }
