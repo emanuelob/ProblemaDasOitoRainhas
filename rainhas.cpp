@@ -24,9 +24,14 @@ int Rainhas::verifica() {
             return -1; // tabuleiro não é 8x8
         }
 
+        int queensInRow = 0;
         for (int col = 0; col < 8; ++col) {
             if (line[col] == '1') {
-                queens[row] = col; // permite múltiplas rainhas na mesma linha, por enquanto
+                if (queensInRow > 0) {
+                    return -1; // mais de uma rainha na mesma linha
+                }
+                queens[row] = col;
+                queensInRow++;
                 count++; // quantidade de rainhas
             } else if (line[col]!= '0') {
                 return -1; // caracter inválido
@@ -44,7 +49,7 @@ int Rainhas::verifica() {
     std::ofstream attacksFile("ataques.txt"); // arquivo para salvar os ataques
     bool validSolution = true;
 
-    // Verifica se as rainhas estão na mesma coluna/linha ou se elas se atacam na diagonal
+    // Verifica se as rainhas estão na mesma coluna ou se elas se atacam na diagonal
     for (int i = 0; i < 8; ++i) {
         for (int j = i + 1; j < 8; ++j) {
             if (queens[i] == queens[j] || abs(queens[i] - queens[j]) == abs(i - j)) { 

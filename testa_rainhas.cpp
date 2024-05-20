@@ -11,12 +11,16 @@ TEST_CASE("Verifica tabuleiros que não são válidos", "[tabuleiros]") {
     REQUIRE(tabuleiro3.verifica() == -1);
     Rainhas tabuleiro4("tabuleiros/teste4.txt");
     REQUIRE(tabuleiro4.verifica() == -1);
+    Rainhas tabuleiro21("tabuleiros/teste21.txt");
+    REQUIRE(tabuleiro21.verifica() == -1);
     Rainhas tabuleiro23("tabuleiros/teste23.txt");
     REQUIRE(tabuleiro23.verifica() == -1);
     Rainhas tabuleiro24("tabuleiros/teste24.txt");
     REQUIRE(tabuleiro24.verifica() == -1);
     Rainhas tabuleiro26("tabuleiros/teste26.txt");
     REQUIRE(tabuleiro26.verifica() == -1);
+    Rainhas tabuleiro30("tabuleiros/teste30.txt");
+    REQUIRE(tabuleiro30.verifica() == -1);
 }
 
 TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabuleiros]") {
@@ -63,10 +67,6 @@ TEST_CASE("Verifica tabuleiros que não são uma solução para o problema", "[t
     REQUIRE(tabuleiro19.verifica() == 0);
     Rainhas tabuleiro20("tabuleiros/teste20.txt");
     REQUIRE(tabuleiro20.verifica() == 0);
-    Rainhas tabuleiro21("tabuleiros/teste21.txt");
-    REQUIRE(tabuleiro21.verifica() == 0);
     Rainhas tabuleiro22("tabuleiros/teste22.txt"); //mesmo arquivo do professor, teste_8_rainhas.txt
     REQUIRE(tabuleiro22.verifica() == 0);
-    Rainhas tabuleiro30("tabuleiros/teste30.txt");
-    REQUIRE(tabuleiro30.verifica() == 0);
 }
