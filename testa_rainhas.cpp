@@ -2,6 +2,17 @@
 #include "catch.hpp"
 #include "rainhas.hpp"
 
+/**
+ * @file testa_rainhas.cpp
+ * Testes unitários para a classe Rainhas.
+ */
+
+/**
+ * Test case para verificar tabuleiros que não são válidos.
+ *
+ * Este teste verifica se a função verifica() retorna -1 para tabuleiros que não são válidos,
+ * ou seja, tabuleiros que violam o formato e as regras do problema das 8 rainhas (disposição das entradas).
+ */
 TEST_CASE("Verifica tabuleiros que não são válidos", "[tabuleiros]") {
     Rainhas tabuleiro("tabuleiros/teste1.txt");
     REQUIRE(tabuleiro.verifica() == -1);
@@ -23,6 +34,13 @@ TEST_CASE("Verifica tabuleiros que não são válidos", "[tabuleiros]") {
     REQUIRE(tabuleiro30.verifica() == -1);
 }
 
+/**
+ * Test case para verificar tabuleiros que são uma solução para o problema.
+ *
+ * Este teste confere se a função verifica() retorna 1 para tabuleiros que são válidos,
+ * ou seja, tabuleiros cujas soluções satisfazem o problema das 8 rainhas. 
+ * Nessa, a disposição do tabuleiro é válida e nenhuma rainha pode atacar outra.
+ */
 TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabuleiros]") {
     Rainhas tabuleiro5("tabuleiros/teste5.txt");
     REQUIRE(tabuleiro5.verifica() == 1);
@@ -46,6 +64,14 @@ TEST_CASE("Verifica tabuleiros que são uma solução para o problema", "[tabule
     REQUIRE(tabuleiro29.verifica() == 1);
 }
 
+/**
+ * Test case para verificar tabuleiros que não são uma solução para o problema das 8 rainhas.
+ *
+ * Este teste confere se a função verifica() retorna 0 para tabuleiros que não possuem soluções válidos,
+ * ou seja, tabuleiros que possuem formatação correta mas não satisfazem 
+ * as regras do problema das 8 rainhas (em algum momento as rainhas se atacam).
+ * Além disso, gera o arquivo ataques.txt correspondente aos ataques.
+ */
 TEST_CASE("Verifica tabuleiros que não são uma solução para o problema", "[tabuleiros]") {
     Rainhas tabuleiro11("tabuleiros/teste11.txt");
     REQUIRE(tabuleiro11.verifica() == 0);
