@@ -1,0 +1,65 @@
+        -:    0:Source:rainhas.cpp
+        -:    1:#include "rainhas.hpp"
+        -:    2:#include <fstream>
+        -:    3:#include <vector>
+        -:    4:#include <string>
+        -:    5:#include <iostream>
+        -:    6:
+       30:    7:Rainhas::Rainhas(const char* filename) {
+       30:    8:    this->filename = filename;
+       30:    9:}
+        -:   10:
+       30:   11:int Rainhas::verifica() {
+       30:   12:    std::ifstream file(filename);
+       30:   13:    if (!file.is_open()) {
+    #####:   14:        return -1;  // falha ao abrir o arquivo
+        -:   15:    }
+        -:   16:
+       30:   17:    int count = 0;
+       30:   18:    int row = 0;
+       30:   19:    std::string line;
+       30:   20:    std::vector<int> queens(8, -1);  // vetor que armazena a posição das rainhas em cada linha
+        -:   21:
+      210:   22:    while (getline(file, line)) {
+      188:   23:        if (row >= 8 || line.size()!= 8) {
+        2:   24:            return -1;  // tabuleiro não é 8x8
+        -:   25:        }
+        -:   26:
+      186:   27:        int queensInRow = 0;
+     1653:   28:        for (int col = 0; col < 8; ++col) {
+     1473:   29:            if (line[col] == '1') {
+      189:   30:                if (queensInRow > 0) {
+        4:   31:                    return -1;  // mais de uma rainha na mesma linha
+        -:   32:                }
+      185:   33:                queens[row] = col;
+      185:   34:                queensInRow++;
+      185:   35:                count++;  // quantidade de rainhas
+     1284:   36:            } else if (line[col]!= '0') {
+        2:   37:                return -1;  // caracter inválido
+        -:   38:            }
+        -:   39:        }
+        -:   40:
+      180:   41:        row++;
+        -:   42:    }
+        -:   43:
+       22:   44:    if (count!= 8) {
+        1:   45:        return -1;  // não tem 8 rainhas
+        -:   46:    }
+        -:   47:
+       21:   48:    std::ofstream attacksFile("ataques.txt");  // arquivo para salvar os ataques
+       21:   49:    bool validSolution = true;
+        -:   50:
+        -:   51:    // restrição de ataque: dois loops para comparar todas as rainhas do tabuleiro
+        -:   52:    // se as rainhas estão na mesma coluna ou se elas se atacam na diagonal
+      189:   53:    for (int i = 0; i < 8; ++i) {
+      756:   54:        for (int j = i + 1; j < 8; ++j) {
+      588:   55:            if (queens[i] == queens[j] || abs(queens[i] - queens[j]) == abs(i - j)) {
+       88:   56:                validSolution = false;
+       88:   57:                attacksFile << i + 1 << "," << queens[i] + 1 << " " << j + 1 << "," << queens[j] + 1 << "\n";
+        -:   58:            }
+        -:   59:        }
+        -:   60:    }
+       21:   61:    attacksFile.close();
+        -:   62:
+       21:   63:    return validSolution? 1 : 0;  // ternário: solução válida ou não válida
+       30:   64:}
