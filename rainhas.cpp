@@ -24,14 +24,9 @@ int Rainhas::verifica() {
             return -1; // tabuleiro não é 8x8
         }
 
-        int col_count = 0;
         for (int col = 0; col < 8; ++col) {
             if (line[col] == '1') {
-                if (queens[row]!= -1) {
-                    return -1; // mais de uma rainha na mesma linha
-                }
-                queens[row] = col;
-                col_count++;
+                queens[row] = col; // permite múltiplas rainhas na mesma linha, por enquanto
                 count++; // quantidade de rainhas
             } else if (line[col]!= '0') {
                 return -1; // caracter inválido
@@ -48,17 +43,28 @@ int Rainhas::verifica() {
     // aplica restrição de ataque: dois loops para comparar todas as rainhas do tabuleiro
     std::ofstream attacksFile("ataques.txt"); // arquivo para salvar os ataques
     bool validSolution = true;
+
+    // as rainhas estão na mesma linha ou coluna?
     for (int i = 0; i < 8; ++i) {
         for (int j = i + 1; j < 8; ++j) {
-            if (queens[i] == queens[j] || // rainhas na mesma coluna
-                queens[i] == queens[j] + (j - i) || // mesma diagonal ascendente
+            if (queens[i] == queens[j]) { // rainhas na mesma coluna
+                validSolution = false;
+                attacksFile << i + 1 << "," << queens[i] + 1 << " ";
+            }
+        }
+    }
+
+    // agpra, verificação de ataques em diagonais
+    for (int i = 0; i < 8; ++i) {
+        for (int j = i + 1; j < 8; ++j) {
+            if (queens[i] == queens[j] + (j - i) || // mesma diagonal ascendente
                 queens[i] == queens[j] - (j - i)) { // mesma diagonal descendente
-                validSolution = false; // solução inválida
-                attacksFile << i + 1 << "," << queens[i] + 1 << " " << j + 1 << "," << queens[j] + 1 << std::endl; // salva os ataques
+                validSolution = false;
+                attacksFile << i + 1 << "," << queens[i] + 1 << " ";
             }
         }
     }
     attacksFile.close(); 
 
-    return validSolution? 1 : 0; // solução válida ou não
+    return validSolution? 1 : 0; // ternário: solução válida ou não válida
 }
