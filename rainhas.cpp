@@ -57,8 +57,7 @@ int Rainhas::verifica() {
     // agpra, verificação de ataques em diagonais
     for (int i = 0; i < 8; ++i) {
         for (int j = i + 1; j < 8; ++j) {
-            if (queens[i] == queens[j] + (j - i) || // mesma diagonal ascendente
-                queens[i] == queens[j] - (j - i)) { // mesma diagonal descendente
+            if (abs(queens[i] - queens[j]) == abs(i - j)) { // mesma diagonal
                 validSolution = false;
                 attacksFile << i + 1 << "," << queens[i] + 1 << " ";
             }
