@@ -1,13 +1,12 @@
-#ifndef rainhas_hpp
-#define rainhas_hpp
+#ifndef RAINHAS_HPP_
+#define RAINHAS_HPP_
 
 class Rainhas {
-public:
+ public:
     Rainhas(const char* filename);
     int verifica();
- 
-private:
+ private:
     const char* filename;
 };
 
-#endif
+#endif  // RAINHAS_HPP_
